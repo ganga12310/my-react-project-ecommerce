@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { products } from "../date/product.js";
 import ProductCard from "../components/ProductCard";
-import { FaStoreAlt } from "react-icons/fa"; // 🎯 Fancy store icon
-// Remove: import "./Home.css"; — if you're switching to inline or scoped styles
+import { FaStoreAlt } from "react-icons/fa";
 
 export default function Home() {
     const [search, setSearch] = useState("");
@@ -19,52 +18,77 @@ export default function Home() {
     const styles = {
         container: {
             padding: "30px",
-            fontFamily: "'Segoe UI', sans-serif",
-            backgroundColor: "#f9f9ff",
+            fontFamily: "'Pacifico', cursive",
+            backgroundColor: "#faf3e0",
             minHeight: "100vh",
-            color: "#222"
+            color: "#333",
         },
         heading: {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: "2rem",
-            color: "rebeccapurple",
-            gap: "10px",
-            marginBottom: "25px"
+            fontSize: "2.5rem",
+            color: "#7b4397",
+            textShadow: "2px 2px 5px #333",
+            gap: "12px",
+            marginBottom: "25px",
+            transition: "0.3s",
+            cursor: "pointer",
+        },
+        headingHover: {
+            transform: "scale(1.1)",
+            color: "#dc2430",
         },
         filters: {
             display: "flex",
             justifyContent: "center",
             gap: "15px",
             marginBottom: "35px",
-            flexWrap: "wrap"
+            flexWrap: "wrap",
         },
         input: {
             padding: "10px",
             fontSize: "1rem",
-            borderRadius: "6px",
-            border: "1px solid #ccc",
-            minWidth: "220px"
+            borderRadius: "8px",
+            border: "1px solid #7b4397",
+            minWidth: "220px",
+            backgroundColor: "#fff",
+            color: "#333",
+            transition: "0.3s",
+        },
+        inputHover: {
+            borderColor: "#dc2430",
+            boxShadow: "0 0 8px #dc2430",
         },
         select: {
             padding: "10px",
             fontSize: "1rem",
-            borderRadius: "6px",
-            border: "1px solid #ccc",
-            minWidth: "180px"
+            borderRadius: "8px",
+            border: "1px solid #7b4397",
+            minWidth: "180px",
+            backgroundColor: "#fff",
+            color: "#333",
+            transition: "0.3s",
+        },
+        selectHover: {
+            borderColor: "#dc2430",
+            boxShadow: "0 0 8px #dc2430",
         },
         grid: {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: "20px"
-        }
+            gap: "20px",
+        },
     };
 
     return (
         <div style={styles.container}>
-            <h1 style={styles.heading}>
-                <FaStoreAlt size={30} color="rebeccapurple" />
+            <h1
+                style={styles.heading}
+                onMouseEnter={(e) => (e.target.style.transform = styles.headingHover.transform)}
+                onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
+            >
+                <FaStoreAlt size={35} color="#dc2430" />
                 Explore Our Products
             </h1>
             <div style={styles.filters}>
@@ -74,11 +98,15 @@ export default function Home() {
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     style={styles.input}
+                    onMouseEnter={(e) => Object.assign(e.target.style, styles.inputHover)}
+                    onMouseLeave={(e) => (e.target.style.boxShadow = "none")}
                 />
                 <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
                     style={styles.select}
+                    onMouseEnter={(e) => Object.assign(e.target.style, styles.selectHover)}
+                    onMouseLeave={(e) => (e.target.style.boxShadow = "none")}
                 >
                     {categories.map((cat) => (
                         <option key={cat}>{cat}</option>

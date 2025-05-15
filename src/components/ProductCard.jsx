@@ -10,11 +10,11 @@ export default function ProductCard({ product }) {
     const cardStyle = {
         width: "250px",
         backgroundColor: "#fff",
-        color: "#333",
+        color: "#4B0082", // Violet brand color
         borderRadius: "8px",
-        boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+        boxShadow: "0 2px 15px rgba(75, 0, 130, 0.4)", // Neon effect
         overflow: "hidden",
-        margin: "15px",
+        margin: "25px", // Increased gap between products
         fontFamily: "'Roboto', sans-serif",
         display: "flex",
         flexDirection: "column",
@@ -43,11 +43,11 @@ export default function ProductCard({ product }) {
         fontSize: "16px",
         fontWeight: "bold",
         margin: "10px 0",
-        color: "#333"
+        color: "#4B0082" // Violet brand color
     };
 
     const priceStyle = {
-        color: "#FF5722", // e-commerce standard price color
+        color: "#9400D3", // Darker violet
         fontSize: "18px",
         marginBottom: "8px",
     };
@@ -60,7 +60,7 @@ export default function ProductCard({ product }) {
     };
 
     const buttonStyle = {
-        backgroundColor: "#FF5722", // standard orange for action
+        backgroundColor: "#4B0082", // Brand violet
         color: "#fff",
         border: "none",
         padding: "12px 0",
@@ -70,11 +70,12 @@ export default function ProductCard({ product }) {
         width: "100%",
         borderBottomLeftRadius: "8px",
         borderBottomRightRadius: "8px",
-        transition: "background-color 0.3s ease",
+        transition: "background-color 0.3s ease, box-shadow 0.3s ease",
     };
 
     const handleHover = (e, hover) => {
-        e.target.style.backgroundColor = hover ? "#e55e2a" : "#FF5722";
+        e.target.style.backgroundColor = hover ? "#9400D3" : "#4B0082"; // Dark violet for hover
+        e.target.style.boxShadow = hover ? "0 0 10px rgba(148, 0, 211, 0.8)" : "none"; // Neon glow effect
     };
 
     return (

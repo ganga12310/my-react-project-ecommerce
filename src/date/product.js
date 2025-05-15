@@ -1,8 +1,8 @@
-import product1 from "../assets/images/images3.png";
-import product2 from "../assets/images/im1.png";
-import product3 from "../assets/images/im1.png";
-import product4 from "../assets/images/image4.png";
-import product5 from "../assets/images/img5.png";
+import product1 from "../assets/images/sneakers.png";
+import product2 from "../assets/images/head phone.png";
+import product3 from "../assets/images/cap.png";
+import product4 from "../assets/images/braclet.png";
+import product5 from "../assets/images/trousure.png";
 
 export const products = [
   {
@@ -16,14 +16,14 @@ export const products = [
   {
     id: 2,
     name: "Urban Tee",
-    category: "Clothing",
+    category: "clothing",
     price: 799,
     description: "Minimalist cotton t-shirt with a modern streetwear vibe.",
     image: product2,
   },
   {
     id: 3,
-    name: "EchoPulse Headphones",
+    name: "Echopulse Headphones",
     category: "Electronics",
     price: 1499,
     description: "Wireless headphones with deep bass and noise isolation.",
